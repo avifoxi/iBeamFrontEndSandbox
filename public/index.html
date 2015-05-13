@@ -2,21 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Full Cal</title>
+	<title>iBeam UI sandbox</title>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/bower_packages/fullcalendar/dist/fullcalendar.css">
 
 	<script src="/bower_packages/jquery/dist/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="/bower_packages/moment/min/moment.min.js"></script>
 	<script src="/bower_packages/fullcalendar/dist/fullcalendar.js"></script>
 
 	<script src='app.js'></script>
 </head>
 <body>
-	<h1>Hello grrrrl</h1>
 
-	<div id='calendar'></div>
+	<div class="container-fluid">
+  
+
+		<h1>Event Scheduler User Interface</h1>
+
+  
+ 			<div class="container">
+		  	<div class="row">
+					<div class="col-xs-6 col-md-4">
+			  		<table class="table table-bordered ">
+						  <tr>
+						  	<th>Welcome Brian Drye</th>
+
+						  </tr>
+						  <tr>
+						  	<th>Schedulable Blocks Left in <span class="userMonthName"></span></th>
+						  	<td class="userBlocksCount">5</td>
+						  </tr>
+						</table>
+			  	</div>
+			  	<div class="col-xs-6 col-md-4">
+			  		<button type="button" class="btn btn-info">Purchase More Event Blocks?</button>
+
+			  	</div>
+			  </div>
+		  </div>
+
+		<div id='calendar'></div>
+
+	</div>
 
 	<script>
 

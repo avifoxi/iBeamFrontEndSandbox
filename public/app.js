@@ -12,10 +12,18 @@ var eventsMay = [
       // ,
       // performance: false
   },
+	{
+      title: 'morning rehearsal 2',
+      start: '2015-05-21 09:00',
+      end: '2015-05-21 11:00'
+      // ,
+      // performance: false
+  },
+
   {
       title: 'evening rehearsal',
-      start: '2015-05-22 17:00',
-      end: '2015-05-22 19:00'
+      start: '2015-05-22 19:00',
+      end: '2015-05-22 21:00'
   },
   {
       title: 'midday rehearsal',
