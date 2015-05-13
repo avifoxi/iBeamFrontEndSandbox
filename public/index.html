@@ -4,12 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Full Cal</title>
 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/bower_packages/fullcalendar/dist/fullcalendar.css">
 
 	<script src="/bower_packages/jquery/dist/jquery.js"></script>
 	<script src="/bower_packages/moment/min/moment.min.js"></script>
 	<script src="/bower_packages/fullcalendar/dist/fullcalendar.js"></script>
 
+	<script src='app.js'></script>
 </head>
 <body>
 	<h1>Hello grrrrl</h1>
@@ -24,6 +26,17 @@
 
     $('#calendar').fullCalendar({
         // put your options and callbacks here
+        // defaultView: 'agendaWeek',
+
+        events: eventsMay,
+
+        dayClick: function(date, jsEvent, view) {
+	        console.log('Clicked on: ' + date.format());
+	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	        console.log('Current view: ' + view.name);
+	        // change the day's background color just for fun
+	        // $(this).css('background-color', 'red');
+	    }
     })
 
 	});
