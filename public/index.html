@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="/bower_packages/fullcalendar/dist/fullcalendar.css">
 
 	<script src="/bower_packages/jquery/dist/jquery.js"></script>
+	<script src="/bower_packages/underscore/underscore-min.js"></script>
+	<script src="/bower_packages/backbone/backbone.js"></script>
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="/bower_packages/moment/min/moment.min.js"></script>
 	<script src="/bower_packages/fullcalendar/dist/fullcalendar.js"></script>
@@ -22,27 +25,31 @@
 		<h1>Event Scheduler User Interface</h1>
 
   
- 			<div class="container">
-		  	<div class="row">
-					<div class="col-xs-6 col-md-4">
-			  		<table class="table table-bordered ">
-						  <tr>
-						  	<th>Welcome Brian Drye</th>
+			<div class="container">
+	  	<div class="row">
+				<div class="col-xs-6 col-md-4">
+		  		<table class="table table-bordered ">
+					  <tr>
+					  	<th>Welcome Brian Drye</th>
 
-						  </tr>
-						  <tr>
-						  	<th>Schedulable Blocks Left in <span class="userMonthName"></span></th>
-						  	<td class="userBlocksCount">5</td>
-						  </tr>
-						</table>
-			  	</div>
-			  	<div class="col-xs-6 col-md-4">
-			  		<button type="button" class="btn btn-info">Purchase More Event Blocks?</button>
+					  </tr>
+					  <tr>
+					  	<th>Schedulable Blocks Left in <span class="userMonthName"></span></th>
+					  	<td class="userBlocksCount">5</td>
+					  </tr>
+					</table>
+		  	</div>
+		  	<div class="col-xs-6 col-md-4">
+		  		<button type="button" class="btn btn-info">Purchase More Event Blocks?</button>
 
-			  	</div>
-			  </div>
+		  	</div>
 		  </div>
-
+	  </div>
+	
+		<div>
+			<p>Click on a day that you want to schedule a rehearsal</p>
+		</div>
+		
 		<div id='calendar'></div>
 
 	</div>
@@ -53,22 +60,57 @@
 
     // page is now ready, initialize the calendar...
 
+    // var globalEvents = 
+
     $('#calendar').fullCalendar({
         // put your options and callbacks here
         // defaultView: 'agendaWeek',
 
-        events: eventsMay,
+      events: eventsMay,
 
-        dayClick: function(date, jsEvent, view) {
-	        console.log('Clicked on: ' + date.format());
-	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	        console.log('Current view: ' + view.name);
-	        // change the day's background color just for fun
-	        // $(this).css('background-color', 'red');
+      dayClick: function(date, jsEvent, view) {
+      	// $('#myModal').modal('show');
+        console.log(date.format());
+        // console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        // console.log('Current view: ' + view.name);
+        // change the day's background color just for fun
+        // $(this).css('background-color', 'red');
 	    }
-    })
+    });
+
+    $('#myModal').on('show.bs.modal', function (event) {
+		  // var button = $(event.relatedTarget) // Button that triggered the modal
+		  // var recipient = button.data('whatever') // Extract info from data-* attributes
+		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		  var modal = $(this)
+		  modal.find('.modal-title').text('Add a new event on day')
+		  // modal.find('.modal-body input').val(recipient)
+		})
 
 	});
+
+	
 	</script>
+
+	<div class="modal fade" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>One fine body&hellip;</p>
+	      </div>
+	      
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </body>
 </html>
