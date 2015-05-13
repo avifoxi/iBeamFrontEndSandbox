@@ -1,0 +1,26 @@
+{
+  "name": "full_cal_setup",
+  "version": "0.0.0",
+  "authors": [
+    "AviFoxi <frosenox@gmail.com>"
+  ],
+  "description": "full_cal",
+  "main": "index.html",
+  "keywords": [
+    "full",
+    "calendar",
+    "moment",
+    "json"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "fullcalendar": "~2.3.1"
+  }
+}
